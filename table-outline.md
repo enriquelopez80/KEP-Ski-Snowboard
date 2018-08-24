@@ -11,6 +11,14 @@
 * vests
 
 ## ACCESSORIES
+
+#### WOMENS
+* hats
+* gloves
+* scarves
+* socks
+
+#### MENS
 * hats
 * gloves
 * scarves
