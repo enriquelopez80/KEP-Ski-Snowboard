@@ -1,7 +1,7 @@
-{
+module.exports = {
   "development": {
-    "username": "root",
-    "password": "root",
+    "username": "process.env.DEV_DB_USER",
+    "password": "process.env.DEV_DB_PASSWORD",
     "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
@@ -18,4 +18,4 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-}
+};
