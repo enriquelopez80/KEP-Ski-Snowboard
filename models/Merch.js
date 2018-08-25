@@ -21,18 +21,26 @@ module.exports = function(sequelize, DataTypes) {
     size: {
       type: DataTypes.STRING
     },
-    inventory_value: {
+    inventoryValue: {
       type: DataTypes.INTEGER
     },
-    inventory_units: {
+    inventoryUnits: {
       type: DataTypes.INTEGER
     },
-    item_price: {
+    itemPrice: {
       type: DataTypes.INTEGER
     },
-    img_src: {
+    imgSrc: {
       type: DataTypes.STRING
     },
+    createdAt: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   });
   return Merch;
 };
