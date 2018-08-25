@@ -6,19 +6,15 @@ module.exports = function (app) {
 
     const responseObj = {}
 
-    const mens = db.Merch.findAll({
+    const mens = db.Merch.findOne({
       where: {
-        department: "MENS",
-        class: "JACKETS",
-      },
-      limit: 5
+        id: 1500,
+      }
     })
-    const womens = db.Merch.findAll({
+    const womens = db.Merch.findOne({
       where: {
-        department: "WOMENS",
-        class: "JACKETS",
-      },
-      limit: 5
+        id: 2000,
+      }
     })
     Promise
       .all([mens, womens])
