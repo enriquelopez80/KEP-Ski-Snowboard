@@ -21,8 +21,8 @@ module.exports = function (app) {
       .then(data => {
         responseObj.mens = data[0];
         responseObj.womens = data[1];
-        res.json(responseObj);
-        // res.render("index", responseObj);
+        // res.json(responseObj);
+        res.render("index", responseObj);
         // UNCOMMENT ABOVE LINE WHEN INDEX IS SET UP WITH HANDLEBARS TO RECEIVE AND RENDER DATA //
       })
       .catch(err => {
