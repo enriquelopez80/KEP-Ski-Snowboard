@@ -3,9 +3,8 @@
 </div>
 
 <div class="uk-position-relative">
-    <img src="http://www.skisoutheast.com/wp-content/uploads/2015/01/2015-01-19-POD.jpg" alt="Ski Background">
     <div class="uk-position-top">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <nav class="uk-navbar-container uk-navbar-transparent" style="background-color: rgb(103,131,179)" uk-navbar>
             <div class="uk-navbar-left uk-light">
                 <ul class="uk-navbar-nav">
                     <li>
@@ -137,29 +136,10 @@
     </div>
 </div>
 
-<div class="uk-child-width-1-2@m" uk-grid>
-    <div>
-        <div class="uk-card uk-card-default" id="left-mens">
-            <div class="uk-card-media-top">
-                <img src="{{mens.imgSrc}}" alt="Oops...Image not Found">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{mens.department}} {{mens.subclass}}</h3>
-                <p>Hot Jackets for Cool weather!</p>
-            </div>
-        </div>
-    </div>
-     <div>
-        <div class="uk-card uk-card-default" id="right-womens">
-            <div class="uk-card-media-top">
-                <img src="{{womens.imgSrc}}" alt="Oops...Image not Found">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{womens.department}} {{womens.subclass}}</h3>
-                <p>Winter is here!</p>
-            </div>
-        </div>
-    </div>
+<div class="merch-container">
+  {{#each merchDisplay}}
+    {{> merchDisplay/merchDisplay}}
+  {{/each}}
 </div>
 
 <footer style="display: flex; justify-content: center">
@@ -188,43 +168,3 @@
 
 
 
-
-
-
-
-
-
-{{!--
-<div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-8 offset-2">
-                <h1>{{msg}}</h1>
-                <h2>This is our Home Page!</h2>
-                <form class="clearfix mb-4" action="POST">
-                    <div class="form-group">
-                        <label for="example-text">Example Text</label>
-                        <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">Example Description</label>
-                        <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-                    </div>
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-                <h3>Examples:</h3>
-                <ul id="example-list" class="list-group">
-                    {{#each examples}}
-                    <li data-id="{{this.id}}" class="list-group-item">
-                        <a href="example/{{this.id}}">{{this.text}}</a>
-                        <button class="btn btn-danger float-right delete">ｘ</button>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
