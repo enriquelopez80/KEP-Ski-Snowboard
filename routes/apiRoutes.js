@@ -1,52 +1,28 @@
-var db = require("../models");
+const orm = require("./orm");
 
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-
-    const responseObj = {}
-
-    const mens = db.Merch.findOne({
-      where: {
-        id: 1500,
-      }
+    orm.homePageData(1900, 3000, function(result) {
+      res.render("index", result)
     })
-    const womens = db.Merch.findOne({
-      where: {
-        id: 2000,
-      }
-    })
-    Promise
-      .all([mens, womens])
-      .then(data => {
-        responseObj.mens = data[0];
-        responseObj.womens = data[1];
-        // res.json(responseObj);
-        res.render("index", responseObj);
-        // UNCOMMENT ABOVE LINE WHEN INDEX IS SET UP WITH HANDLEBARS TO RECEIVE AND RENDER DATA //
-      })
-      .catch(err => {
-        console.log('**********ERROR****************');
-        console.log(err);
-      });
-
   });
 
-  // below get request called via click listener of images links for particular item
-  app.get("/inventory/:name", function (req, res) {
+  app.get("/:name", function (req, res) {
+    orm.findByProdName(req.params.name.toUpperCase(), function(result) {
+    res.json(result)
+    });
+  })
 
-    let name = req.params.name.toUpperCase()
+  app.get("/:department/:class/", function (req, res) {
 
-    db.Merch.findAll({
-      where: {
-        name: name
-      },
-      limit: 9
+    let depName = req.params.department.toUpperCase();
+    let className = req.params.class.toUpperCase();
+    orm.findByDeptAndClass(depName, className, function(result) {
+      res.json(result)
     })
-      .then(function (responseObj) {
-        res.json(responseObj)
-      });
-  });
+
+  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
