@@ -4,8 +4,28 @@ const Op = Sequelize.Op;
 
 module.exports = {
 
-    findByProdName: (productName, cb) => {
+    findItemById: (id, cb) => {
         db.Merch.findOne({
+            where: {
+                id: id
+            }
+        }).then(data => {
+            cb(data)
+        })
+    },
+
+    findOneByProdName: (productName, cb) => {
+        db.Merch.findOne({
+            where: {
+                name: productName
+            }
+        }).then(data => {
+            cb(data)
+        })
+    },
+
+    findAllByProdName: (productName, cb) => {
+        db.Merch.findAll({
             where: {
                 name: productName
             }
@@ -46,32 +66,37 @@ module.exports = {
             },
         })
             .then(data => {
+                let searchResults = data;
                 let productNamesArr = data.map(nonUniqueRows => {
                     return nonUniqueRows.name
+                });
+                let dataArr = [productNamesArr, searchResults]
+                return dataArr
+            }).then(dataArr => {
+                let searchResults = dataArr[1];
+                let unique = dataArr[0].filter((value, index, self) => {
+                    return self.indexOf(value) === index;
+                });
+                let uniqueIndices = unique.map((value) => {
+                    return dataArr[0].indexOf(value)
                 })
-                //CONVERT FIND-ALL RESULTS TO TO JS 'SET' OF UNIQUE NAMES:
-                let uniqueProductNamesSet = new Set(productNamesArr);
-                console.log("**********************************************************");
-                console.log(uniqueProductNamesSet);
-                console.log("**********************************************************");
-                let setLength = uniqueProductNamesSet.size;
-
-                let uniqueProductsArr = []
-                //QUERY DATABASE FOR UNIQUE ITEM INFORMATION AND PUSH TO 'uniqueProductsArr' BEFORE SENDING BACK:
-                for (name of uniqueProductNamesSet) {
-                    db.Merch.findOne({
-                        where: {
-                            name: name
-                        }
-                    }).then(data => {
-                        console.log(JSON.stringify(data, undefined, 2))
-                        uniqueProductsArr.push(data)
-                    })
-                }
-                return uniqueProductsArr
-            }).then(uniqueProductsArr => {
-                cb(uniqueProductsArr)
+                let dataArray = [uniqueIndices, searchResults];
+                return dataArray
+            }).then(dataArray => {
+                let uniqueIndices = dataArray[0];
+                let searchResults = dataArray[1];
+                // USE UNIQUE-INDICES TO FETCH DISTINCT DATA (BY NAME) FROM ORIGINAL SEARCH RESULTS //
+                return uniqueIndices.map((uniqueIndex) => {
+                    return searchResults[uniqueIndex]
+                })
+            }).then(data => {
+                cb(data)
             })
+    },
+
+    onlyUnique: (value, index, self) => {
+        return self.indexOf(value) === index;
     }
+
 
 }

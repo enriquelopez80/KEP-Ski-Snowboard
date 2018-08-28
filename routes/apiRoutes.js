@@ -7,21 +7,32 @@ module.exports = function (app) {
       res.render("index", result)
     })
   });
+  
+  app.get("/id/:id", function (req, res) {
+    let id = Number(req.params.id);
+    orm.findItemById(id, function (result) {
+      res.json(result)
+    })
+  })
 
-  app.get("/:name", function (req, res) {
-    orm.findByProdName(req.params.name.toUpperCase(), function(result) {
+  app.get("/one/:name", function (req, res) {
+    orm.findOneByProdName(req.params.name.toUpperCase(), function(result) {
+    res.json(result)
+    });
+  })
+
+  app.get("/all/:name", function (req, res) {
+    orm.findAllByProdName(req.params.name.toUpperCase(), function(result) {
     res.json(result)
     });
   })
 
   app.get("/:department/:class/", function (req, res) {
-
     let depName = req.params.department.toUpperCase();
     let className = req.params.class.toUpperCase();
     orm.findByDeptAndClass(depName, className, function(result) {
       res.json(result)
     })
-
   })
 
   // Render 404 page for any unmatched routes

@@ -1,99 +1,125 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+$(document).ready(function () {
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
+//************CLICK LISTENERS:************//
+//****************************************//
+
+//HOMEPAGE DIVS//
+//*************/
+
+$("#left-mens").on("click", function(event) {
+  event.preventDefault()
+  let id = $(this).data("attribute");
+  $.ajax({
+    method: "GET",
+    url: `http://localhost:8080/id/${id}`,
+    success: (data) => {
+      console.log(data)
+    }
+  }) 
+})
+
+$("#right-womens").on("click", function(event) {
+  event.preventDefault()
+  let id = $(this).data("attribute");
+  $.ajax({
+    method: "GET",
+    url: `http://localhost:8080/id/${id}`,
+    success: (data) => {
+      console.log(data)
+    }
+  }) 
+})
+
+//NAVBAR LINKS//
+//*************/
+
+  //MENS//
+  $("#mensJackets").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("mens", "jackets", logResponse)
+  })
+  $("#mensFleece").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("mens", "fleece", logResponse)
+  })
+  $("#mensVests").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("mens", "vests", logResponse)
+  })
+  $("#mensPants").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("mens", "pants", logResponse)
+  })
+  //WOMENS//
+  $("#womensJackets").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("womens", "jackets", logResponse)
+  })
+  $("#womensFleece").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("womens", "fleece", logResponse)
+  })
+  $("#womensVests").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("womens", "vests", logResponse)
+  })
+  $("#womensPants").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("womens", "pants", logResponse)
+  })
+  //EQUIPMENT - SKI//
+  $("#skis").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("ski", "skis", logResponse)
+  })
+  $("#skiBindings").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("ski", "bindings", logResponse)
+  })
+  $("#skiBoots").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("ski", "boots", logResponse)
+  })
+  $("#skis").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("ski", "skis", logResponse)
+  })
+  //EQUIPMENT - SNOW//
+  $("#snowboards").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("snowboard", "boards", logResponse)
+  })
+  $("#snowBindings").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("snowboard", "bindings", logResponse)
+  })
+  $("#snowBoots").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("snowboard", "boots", logResponse)
+  })
+  //SAFETY - HELMETS//
+  $(".helmets").on("click", function (event) {
+    event.preventDefault();
+    ajaxGet("equipment", "helmets", logResponse)
+  })
+  
+//************UTILS:**************//
+//********************************//
+
+  let ajaxGet = (dep, subclass, cb) => {
+    let queryURL = `http://localhost:8080/${dep}/${subclass}/`;
+    $.ajax({
+      method: "GET",
+      url: queryURL,
+      success: (data) => {
+        cb(data, 9)
+      }
+    })
   }
-};
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
+  let logResponse = (array, num) => {
+    for (let n = 0; n < num; n++) {
+      console.log(array[n]);
+    }
   }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});
