@@ -22,3 +22,16 @@ img {
 .primary-header {
   padding: 10px;
 }
+
+.navbar {
+  padding-left: 20px;
+}
+
+.navbarRight {
+  padding-right: 20px;
+}
+
+.stickybar {
+  color: blue;
+}
+
