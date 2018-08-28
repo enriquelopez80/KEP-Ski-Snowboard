@@ -16,10 +16,10 @@
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li class="uk-active"><a href="#">Apparel</a></li>
                                         <li class="uk-nav-divider"></li>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Fleece</a></li>
-                                        <li><a href="#">Vests</a></li>
-                                        <li><a href="#">Pants</a></li>
+                                        <li><a href="#" id="mensJackets">Jackets</a></li>
+                                        <li><a href="#" id="mensFleece">Fleece</a></li>
+                                        <li><a href="#" id="mensVests">Vests</a></li>
+                                        <li><a href="#" id="mensPants">Pants</a></li>
                                     </ul>
                                 </div>
                                 <div>
@@ -43,10 +43,10 @@
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li class="uk-active"><a href="#">Apparel</a></li>
                                         <li class="uk-nav-divider"></li>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Fleece</a></li>
-                                        <li><a href="#">Vests</a></li>
-                                        <li><a href="#">Pants</a></li>
+                                        <li><a href="#" id="womensJackets">Jackets</a></li>
+                                        <li><a href="#" id="womensFleece">Fleece</a></li>
+                                        <li><a href="#" id="womensVests">Vests</a></li>
+                                        <li><a href="#" id="womensPants">Pants</a></li>
                                     </ul>
                                 </div>
                                 <div>
@@ -96,12 +96,12 @@
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li class="uk-active"><a href="#">Equipment</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Skis</a></li>
-                                <li><a href="#">Bindings</a></li>
-                                <li><a href="#">Boots</a></li>
+                                <li><a href="#" id="skis">Skis</a></li>
+                                <li><a href="#" id="skiBindings">Bindings</a></li>
+                                <li><a href="#" id="skiBoots">Boots</a></li>
                                 <li class="uk-nav-header">Safety</li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Helmets</a></li>
+                                <li><a href="#" class="helmets">Helmets</a></li>
                             </ul>
                         </div>
                     </li>
@@ -111,12 +111,12 @@
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li class="uk-active"><a href="#">Equipment</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Boards</a></li>
-                                <li><a href="#">Bindings</a></li>
-                                <li><a href="#">Boots</a></li>
+                                <li><a href="#" id="snowboards">Boards</a></li>
+                                <li><a href="#" id="snowBindings">Bindings</a></li>
+                                <li><a href="#" id="snowBoots">Boots</a></li>
                                 <li class="uk-nav-header">Safety</li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Helmets</a></li>
+                                <li><a href="#" class="helmets">Helmets</a></li>
                             </ul>
                         </div>
                     </li>
@@ -139,7 +139,7 @@
 
 <div class="uk-child-width-1-2@m" uk-grid>
     <div>
-        <div class="uk-card uk-card-default" id="left-mens">
+        <div class="uk-card uk-card-default" id="left-mens" data-attribute="{{mens.id}}">
             <div class="uk-card-media-top">
                 <img src="{{mens.imgSrc}}" alt="Oops...Image not Found">
             </div>
@@ -150,7 +150,7 @@
         </div>
     </div>
      <div>
-        <div class="uk-card uk-card-default" id="right-womens">
+        <div class="uk-card uk-card-default" id="right-womens" data-attribute="{{womens.id}}">
             <div class="uk-card-media-top">
                 <img src="{{womens.imgSrc}}" alt="Oops...Image not Found">
             </div>
@@ -227,4 +227,4 @@
 </div> --}}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="./js/index.js" type="text/javascript"></script>
