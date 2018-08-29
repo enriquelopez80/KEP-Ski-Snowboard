@@ -3,41 +3,42 @@
 </div>
 
 <div class="uk-position-relative">
-   <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true; autoplay: true; autoplay-interval: 5000">
+    <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true; autoplay: true; autoplay-interval: 5000">
 
-    <ul class="uk-slider-items uk-child-width-1-4@m uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 0">
-        <li class="uk-width-1-1">
-            <div class="uk-cover-container">
-                <img src="http://sendmesomewhere.com/wp-content/uploads/2018/05/alps-snow-board-extreme-sport-the-finest-transportation-to-your-skiing-holiday.jpg" alt="skiing" uk-cover>
-                <div class="uk-position-center uk-panel"></div>
-            </div>
-        </li>
-        <li class="uk-width-1-1">
-            <div class="uk-cover-container">
-                <img src="http://blog.interdiscount.ch/wp-content/uploads/2017/12/snowboarding.jpg" alt="snowboarding" uk-cover>
-                <div class="uk-position-center uk-panel"></div>
-            </div>
-        </li>
-        <li class="uk-width-1-1">
-            <div class="uk-cover-container">
-                <img src="http://www.schischule-filzmoos.at/uploads/tx_flexslider/erwachsene2.jpg" alt="skiing" uk-cover>
-                <div class="uk-position-center uk-panel"></div>
-            </div>
-        </li>
-        <li class="uk-width-1-1">
-            <div class="uk-cover-container">
-                <img src="http://pmo3aea99.pic30.websiteonline.cn/upload/banenr1_qjcr.jpg" alt="skiing" uk-cover>
-                <div class="uk-position-center uk-panel"></div>
-            </div>
-        </li>
-    </ul>
+        <ul class="uk-slider-items uk-child-width-1-4@m uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 0">
+            <li class="uk-width-1-1">
+                <div class="uk-cover-container">
+                    <img src="http://sendmesomewhere.com/wp-content/uploads/2018/05/alps-snow-board-extreme-sport-the-finest-transportation-to-your-skiing-holiday.jpg"
+                        alt="skiing" uk-cover>
+                    <div class="uk-position-center uk-panel"></div>
+                </div>
+            </li>
+            <li class="uk-width-1-1">
+                <div class="uk-cover-container">
+                    <img src="http://blog.interdiscount.ch/wp-content/uploads/2017/12/snowboarding.jpg" alt="snowboarding" uk-cover>
+                    <div class="uk-position-center uk-panel"></div>
+                </div>
+            </li>
+            <li class="uk-width-1-1">
+                <div class="uk-cover-container">
+                    <img src="http://www.schischule-filzmoos.at/uploads/tx_flexslider/erwachsene2.jpg" alt="skiing" uk-cover>
+                    <div class="uk-position-center uk-panel"></div>
+                </div>
+            </li>
+            <li class="uk-width-1-1">
+                <div class="uk-cover-container">
+                    <img src="http://pmo3aea99.pic30.websiteonline.cn/upload/banenr1_qjcr.jpg" alt="skiing" uk-cover>
+                    <div class="uk-position-center uk-panel"></div>
+                </div>
+            </li>
+        </ul>
 
-    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
 
-</div>
+    </div>
 
- 
+
     <div class="uk-position-top">
         <nav class="uk-navbar-container uk-navbar-transparent" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200"
             uk-navbar>
@@ -187,55 +188,46 @@
     </div>
 </div>
 
-<div class="uk-child-width-1-2@m" uk-grid>
-    <div>
-        <div class="uk-card uk-card-default" id="left-mens" data-attribute="{{mens.id}}">
-            <div class="uk-card-media-top">
-                <img src="{{mens.imgSrc}}" alt="Oops...Image not Found">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{mens.department}} {{mens.subclass}}</h3>
-                <p>Hot Jackets for Cool weather!</p>
-            </div>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+
+    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"  style="background-image: url('{{mens.imgSrc}}');">
+        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{mens.department}}</h1>
+            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
         </div>
     </div>
 
-     <div>
-        <div class="uk-card uk-card-default" id="right-womens" data-attribute="{{womens.id}}">
-
-            <div class="uk-card-media-top">
-                <img src="{{womens.imgSrc}}" alt="Oops...Image not Found">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{womens.department}} {{womens.subclass}}</h3>
-                <p>Winter is here!</p>
-            </div>
+     <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"  style="background-image: url('{{womens.imgSrc}}');">
+        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{womens.department}}</h1>
+            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
         </div>
     </div>
+
 </div>
 
 <footer style="display: flex; justify-content: center">
     <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2018-12-21T21:21:23+00:00">
-                <div>
-                    <div class="uk-countdown-number uk-countdown-days"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
-                </div>
-                <div class="uk-countdown-separator">:</div>
-                <div>
-                    <div class="uk-countdown-number uk-countdown-hours"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
-                </div>
-                <div class="uk-countdown-separator">:</div>
-                <div>
-                    <div class="uk-countdown-number uk-countdown-minutes"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
-                </div>
-                <div class="uk-countdown-separator">:</div>
-                <div>
-                    <div class="uk-countdown-number uk-countdown-seconds"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
-                </div>
-            </div>
+        <div>
+            <div class="uk-countdown-number uk-countdown-days"></div>
+            <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+        </div>
+        <div class="uk-countdown-separator">:</div>
+        <div>
+            <div class="uk-countdown-number uk-countdown-hours"></div>
+            <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+        </div>
+        <div class="uk-countdown-separator">:</div>
+        <div>
+            <div class="uk-countdown-number uk-countdown-minutes"></div>
+            <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+        </div>
+        <div class="uk-countdown-separator">:</div>
+        <div>
+            <div class="uk-countdown-number uk-countdown-seconds"></div>
+            <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+        </div>
+    </div>
 </footer>
 
 
