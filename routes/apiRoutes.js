@@ -31,7 +31,8 @@ module.exports = function (app) {
     let depName = req.params.department.toUpperCase();
     let className = req.params.class.toUpperCase();
     orm.findByDeptAndClass(depName, className, function(result) {
-      res.json(result)
+      // res.json(result)
+      res.render("merchDisplay", result);
     })
   })
 

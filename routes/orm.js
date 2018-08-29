@@ -59,6 +59,7 @@ module.exports = {
     },
 
     findByDeptAndClass: (depName, className, cb) => {
+        let responseObj = {};
         db.Merch.findAll({
             where: {
                 department: depName,
@@ -90,7 +91,8 @@ module.exports = {
                     return searchResults[uniqueIndex]
                 })
             }).then(data => {
-                cb(data)
+                responseObj.merch = data;
+                cb(responseObj)
             })
     },
 
