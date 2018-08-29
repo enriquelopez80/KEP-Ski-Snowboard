@@ -11,19 +11,22 @@ module.exports = function (app) {
   app.get("/id/:id", function (req, res) {
     let id = Number(req.params.id);
     orm.findItemById(id, function (result) {
-      res.json(result)
+      // res.json(result)
+      res.render("merchDisplay", result);
     })
   })
 
   app.get("/one/:name", function (req, res) {
     orm.findOneByProdName(req.params.name.toUpperCase(), function(result) {
-    res.json(result)
+    // res.json(result)
+    res.render("merchDisplay", result);
     });
   })
 
   app.get("/all/:name", function (req, res) {
     orm.findAllByProdName(req.params.name.toUpperCase(), function(result) {
-    res.json(result)
+    // res.json(result);
+    res.render("merchDisplay", result);
     });
   })
 

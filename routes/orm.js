@@ -5,32 +5,38 @@ const Op = Sequelize.Op;
 module.exports = {
 
     findItemById: (id, cb) => {
+        let responseObj = {};
         db.Merch.findOne({
             where: {
                 id: id
             }
         }).then(data => {
-            cb(data)
+            responseObj.merch = data;
+            cb(responseObj)
         })
     },
 
     findOneByProdName: (productName, cb) => {
+        let responseObj = {};
         db.Merch.findOne({
             where: {
                 name: productName
             }
         }).then(data => {
-            cb(data)
+            responseObj.merch = data;
+            cb(responseObj)
         })
     },
 
     findAllByProdName: (productName, cb) => {
+        let responseObj = {};
         db.Merch.findAll({
             where: {
                 name: productName
             }
         }).then(data => {
-            cb(data)
+            responseObj.merch = data;
+            cb(responseObj)
         })
     },
 
