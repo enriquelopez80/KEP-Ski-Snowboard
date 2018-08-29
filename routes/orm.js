@@ -96,6 +96,47 @@ module.exports = {
             })
     },
 
+    findByDeptClassSubclass: (depName, className, subclass, cb) => {
+        let responseObj = {};
+        db.Merch.findAll({
+            where: {
+                department: depName,
+                class: className,
+                subclass: subclass
+            },
+        })
+            .then(data => {
+                let searchResults = data;
+                let productNamesArr = data.map(nonUniqueRows => {
+                    return nonUniqueRows.name
+                });
+                let dataArr = [productNamesArr, searchResults]
+                return dataArr
+            }).then(dataArr => {
+                let searchResults = dataArr[1];
+                let unique = dataArr[0].filter((value, index, self) => {
+                    return self.indexOf(value) === index;
+                });
+                let uniqueIndices = unique.map((value) => {
+                    return dataArr[0].indexOf(value)
+                })
+                let dataArray = [uniqueIndices, searchResults];
+                return dataArray
+            }).then(dataArray => {
+                let uniqueIndices = dataArray[0];
+                let searchResults = dataArray[1];
+                // USE UNIQUE-INDICES TO FETCH DISTINCT DATA (BY NAME) FROM ORIGINAL SEARCH RESULTS //
+                return uniqueIndices.map((uniqueIndex) => {
+                    return searchResults[uniqueIndex]
+                })
+            }).then(data => {
+                responseObj.merch = data;
+                cb(responseObj)
+            })
+    },
+
+
+
     onlyUnique: (value, index, self) => {
         return self.indexOf(value) === index;
     }

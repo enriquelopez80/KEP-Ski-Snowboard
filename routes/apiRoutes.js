@@ -27,11 +27,21 @@ module.exports = function (app) {
     });
   })
 
-  app.get("/:department/:class/", function (req, res) {
+  app.get("/:department/:class", function (req, res) {
     let depName = req.params.department.toUpperCase();
     let className = req.params.class.toUpperCase();
     orm.findByDeptAndClass(depName, className, function(result) {
       // res.json(result)
+      res.render("merchDisplay", result);
+    })
+  })
+
+  app.get("/:department/:class/:subclass", function (req, res) {
+    let depName = req.params.department.toUpperCase();
+    let className = req.params.class.toUpperCase();
+    let subclass = req.params.subclass.toUpperCase();
+    orm.findByDeptClassSubclass(depName, className, subclass, function(result) {
+      // res.json(result);
       res.render("merchDisplay", result);
     })
   })
