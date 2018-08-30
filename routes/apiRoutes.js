@@ -18,15 +18,13 @@ module.exports = function (app) {
 
   app.get("/one/:name", function (req, res) {
     orm.findOneByProdName(req.params.name.toUpperCase(), function(result) {
-    // res.json(result)
-    res.render("merchDisplay", result);
+    res.json(result)
     });
   })
 
   app.get("/all/:name", function (req, res) {
     orm.findAllByProdName(req.params.name.toUpperCase(), function(result) {
-    // res.json(result);
-    res.render("merchDisplay", result);
+    res.json(result);
     });
   })
 

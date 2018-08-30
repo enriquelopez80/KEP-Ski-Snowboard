@@ -20,27 +20,31 @@
         <div class="uk-modal-body">
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 <div class="uk-card-media-left uk-cover-container">
-                    <img src="{{imgSrc}}" alt="Oops, Image not Found" uk-cover>
+                    <img src="http://place-hold.it/200x200/" class="uk-modal-img" alt="Oops, Image not Found" uk-cover>
                     <canvas width="600" height="400"></canvas>
                 </div>
                 <div>
                     <div class="uk-card-body">
                         <h5 class="uk-card-title">Sizes:</h5>
-                        <div class="colors-available">
-                            {{#each sizes}} {{sizes/sizes}} {{/each}}
+                        <div class="sizes-available">
+                            {{!-- {{RENDERED VIA MERCH.JS}} --}}
                         </div>
                         <h5 class="uk-card-title">Colors:</h5>
-                        <div class="size-available">
-                            {{#each colors}} {{colors/colors}} {{/each}}
+                        <div class="colors-available">
+                            {{!-- {{RENDERED VIA MERCH.JS}} --}}
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            <p>{{description}}</p>
+            
+            <p class="uk-modal-description">DESCRIPTION NOT RENDERED</p>
+            
         </div>
         <div class="uk-modal-footer uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Continue Shopping</button>
-            <button class="uk-button uk-button-primary" type="button">Add to Cart</button>
+            <button class="uk-button uk-button-primary" id="addToCart" type="button">Add to Cart</button>
         </div>
     </div>
 </div>
