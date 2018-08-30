@@ -35,5 +35,13 @@ img {
   background-color: rgb(103,131,179);
 }
 
+.merchDisplayContainer {
+  padding: 100px 30px 30px 30px !important;
+}
+
+.merch-container {
+  margin-left: 0px !important;
+}
+
 
 
