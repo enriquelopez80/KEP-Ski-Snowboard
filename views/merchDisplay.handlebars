@@ -130,14 +130,15 @@
                             <input class="uk-search-input uk-light" type="search" placeholder="Search our merch..." autofocus>
                         </form>
                     </div>
-                </div>
-                <div class="uk-offcanvas-content">
-
+                    <div class="uk-offcanvas-content">
+                    
                     <button class="uk-icon-button" id="dislay-cart-button" uk-icon="icon: cart;" class="uk-button" type="button" uk-toggle="target: #offcanvas-overlay"></button>
 
-                    <div id="offcanvas-overlay" uk-offcanvas="flip: true">
-                        <div class="uk-offcanvas-bar">
 
+
+                        <div id="offcanvas-overlay" uk-offcanvas="flip: true">
+                            <div class="uk-offcanvas-bar">
+                            
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
                             
                             <div id="cart">
@@ -146,7 +147,7 @@
                             {{!-- BUILD OUT CART ITEMS SO THAT MERCH.JS CAN LOOP OVER STORAGE DATA AND RENDER THE CART ITEMS HERE ACCORDINGLY --}}
                             
                             </div>
-                            
+                           
 
                         </div>
                     </div>
