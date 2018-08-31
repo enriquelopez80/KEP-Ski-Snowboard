@@ -179,6 +179,19 @@
 
                             <h3>Your Cart is Empty!</h3>
 
+                            <ul class="uk-nav uk-nav-default">
+                                <li class="uk-active">Item Name</li>
+                                <li class="uk-parent">
+                                    <ul class="uk-nav-sub">
+                                        <li>Size</li>
+                                        <li>Color</li>
+                                        <li>Price</li>
+                                    </ul>
+                                </li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: credit-card"></span>Checkout</a></li>
+                                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Empty Cart</a></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -190,14 +203,16 @@
 
 <div class="uk-child-width-expand@s uk-text-center" uk-grid>
 
-    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"  style="background-image: url('{{mens.imgSrc}}');">
+    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"
+        style="background-image: url('{{mens.imgSrc}}');">
         <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
             <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{mens.department}}</h1>
             <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
         </div>
     </div>
 
-     <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"  style="background-image: url('{{womens.imgSrc}}');">
+    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"
+        style="background-image: url('{{womens.imgSrc}}');">
         <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
             <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{womens.department}}</h1>
             <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
