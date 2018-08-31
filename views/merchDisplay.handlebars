@@ -133,14 +133,20 @@
                 </div>
                 <div class="uk-offcanvas-content">
 
-                    <button class="uk-icon-button" uk-icon="icon: cart;" class="uk-button" type="button" uk-toggle="target: #offcanvas-overlay"></button>
+                    <button class="uk-icon-button" id="dislay-cart-button" uk-icon="icon: cart;" class="uk-button" type="button" uk-toggle="target: #offcanvas-overlay"></button>
 
                     <div id="offcanvas-overlay" uk-offcanvas="flip: true">
                         <div class="uk-offcanvas-bar">
 
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
-
+                            
+                            <div id="cart">
                             <h3>Your Cart is Empty!</h3>
+                        
+                            {{!-- BUILD OUT CART ITEMS SO THAT MERCH.JS CAN LOOP OVER STORAGE DATA AND RENDER THE CART ITEMS HERE ACCORDINGLY --}}
+                            
+                            </div>
+                            
 
                         </div>
                     </div>
