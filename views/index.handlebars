@@ -1,5 +1,5 @@
 <div class="top-span">
-    <p class="shipping-ad uk-text-small">>Free 2-day shipping on all orders $99+</p>
+    <p class="shipping-ad uk-text-small">KEP SKI SNOWBOARD</p>
 </div>
 
 <div class="uk-position-relative">
@@ -177,21 +177,29 @@
 
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                            <h3>Your Cart is Empty!</h3>
+                            <div id="cart">
+                                <h3>Your Cart is Empty!</h3>
 
-                            <ul class="uk-nav uk-nav-default">
-                                <li class="uk-active">Item Name</li>
-                                <li class="uk-parent">
-                                    <ul class="uk-nav-sub">
-                                        <li>Size</li>
-                                        <li>Color</li>
-                                        <li>Price</li>
-                                    </ul>
-                                </li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: credit-card"></span>Checkout</a></li>
-                                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Empty Cart</a></li>
-                            </ul>
+                                <ul class="uk-nav uk-nav-default">
+                                    <li class="uk-active">Item Name</li>
+                                    <li class="uk-parent">
+                                        <ul class="uk-nav-sub">
+                                            <li>Size</li>
+                                            <li>Color</li>
+                                            <li>Price</li>
+                                        </ul>
+                                    </li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: credit-card"></span>Checkout</a></li>
+                                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Empty
+                                            Cart
+                                        </a></li>
+                                </ul>
+
+                                {{!-- BUILD OUT CART ITEMS SO THAT MERCH.JS CAN LOOP OVER STORAGE DATA AND RENDER THE CART ITEMS HERE ACCORDINGLY --}}
+
+                            </div>
+
                         </div>
                     </div>
 
@@ -201,22 +209,27 @@
     </div>
 </div>
 
-<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+<div class="latest-styles">
 
-    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"
-        style="background-image: url('{{mens.imgSrc}}');">
-        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{mens.department}}</h1>
-            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
-        </div>
-    </div>
+    <div class="uk-child-width-1-3@s uk-text-center uk-flex uk-flex-center" uk-grid>
 
-    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"
-        style="background-image: url('{{womens.imgSrc}}');">
-        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{womens.department}}</h1>
-            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"
+            style="background-image: url('http://cdn.shopify.com/s/files/1/2030/8605/products/3_a86c766a-dea1-4694-9c89-2b534d78c0a5_grande.jpg?v=1513097823');">
+            <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+
+                <h1><a href="/mens/jackets" id="mensJackets" uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">MENS JACKETS</a></h1>
+                <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+            </div>
         </div>
+
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"
+            style="background-image: url('https://content.backcountry.com/promo_upload/bcs/2017/spyder/Backcountry_Social_Widget3.jpg');">
+            <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+                 <h1><a href="/womens/jackets" id="womensJackets" uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">WOMEN'S JACKETS</a></h1>
+                <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -245,46 +258,6 @@
         </div>
     </div>
 </footer>
-
-
-
-
-
-
-
-
-
-{{!--
-<div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-8 offset-2">
-                <h1>{{msg}}</h1>
-                <h2>This is our Home Page!</h2>
-                <form class="clearfix mb-4" action="POST">
-                    <div class="form-group">
-                        <label for="example-text">Example Text</label>
-                        <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-description">Example Description</label>
-                        <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-                    </div>
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-                <h3>Examples:</h3>
-                <ul id="example-list" class="list-group">
-                    {{#each examples}}
-                    <li data-id="{{this.id}}" class="list-group-item">
-                        <a href="example/{{this.id}}">{{this.text}}</a>
-                        <button class="btn btn-danger float-right delete">ｘ</button>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
