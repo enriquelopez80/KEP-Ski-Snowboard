@@ -1,15 +1,14 @@
-
-    <a class="uk-button uk-button-default" href="#modal-sections" data-id="{{id}}" data-name="{{name}}" uk-toggle>
-            <div class="uk-card uk-card-hover uk-card-default">
-                <div class="uk-card-media-top">
-                    <img data-src="{{imgSrc}}" alt="Oops...Image not Found" uk-img>
-                </div>
-                <div class="uk-card-body">
-                    <h3 class="uk-card-title">{{name}}</h3>
-                    <p>${{itemPrice}}</p>
-                </div>
-            </div>
-    </a>
+<a class="uk-button uk-button-default" href="#modal-sections" data-id="{{id}}" data-name="{{name}}" uk-toggle>
+    <div class="uk-card uk-card-hover uk-card-default">
+        <div class="uk-card-media-top">
+            <img src="{{imgSrc}}" alt="Oops...Image not Found">
+        </div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">{{name}}</h3>
+            <p>${{itemPrice}}</p>
+        </div>
+    </div>
+</a>
 
 <div id="modal-sections" data-id="{{id}}" uk-modal>
     <div class="uk-modal-dialog">
@@ -27,13 +26,11 @@
                     <div class="uk-card-body">
                         <h5 class="uk-card-title">Sizes:</h5>
                         <div class="sizes-available">
-                            {{!-- {{RENDERED VIA MERCH.JS}} --}}
+                            {{!-- <button class="uk-button uk-modal-size uk-button-default uk-button-small">SIZE</button> --}}
                         </div>
                         <h5 class="uk-card-title">Colors:</h5>
                         <div class="colors-available">
-                            {{!-- {{RENDERED VIA MERCH.JS}} --}}
-
-
+                            {{!-- <button class="uk-button uk-modal-color uk-button-default uk-button-small">COLOR</button> --}}
                         </div>
                     </div>
                 </div>
