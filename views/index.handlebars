@@ -1,5 +1,5 @@
 <div class="top-span">
-    <p class="shipping-ad uk-text-small">Free 2-day shipping on all orders $99+</p>
+    <p class="shipping-ad uk-text-small">KEP SKI SNOWBOARD</p>
 </div>
 
 <div class="uk-position-relative">
@@ -137,7 +137,7 @@
                                 <li><a href="/ski/boots" id="skiBoots">Boots</a></li>
                                 <li class="uk-nav-header">Safety</li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="/safety/helmets" class="helmets">Helmets</a></li>
+                                <li><a href="/equipment/helmets" class="helmets">Helmets</a></li>
                             </ul>
                         </div>
                     </li>
@@ -152,7 +152,7 @@
                                 <li><a href="/snowboard/boots" id="snowBoots">Boots</a></li>
                                 <li class="uk-nav-header">Safety</li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="/safety/helmets" class="helmets">Helmets</a></li>
+                                <li><a href="/equipment/helmets" class="helmets">Helmets</a></li>
                             </ul>
                         </div>
                     </li>
@@ -177,7 +177,9 @@
 
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                            <h3>Your Cart is Empty!</h3>
+                            <div id="cart">
+                                <h3>Your Cart is Empty!</h3>
+                            </div>
 
                         </div>
                     </div>
@@ -188,20 +190,27 @@
     </div>
 </div>
 
-<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+<div class="latest-styles">
 
-    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"  style="background-image: url('{{mens.imgSrc}}');">
-        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{mens.department}}</h1>
-            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
-        </div>
-    </div>
+    <div class="uk-child-width-1-3@s uk-text-center uk-flex uk-flex-center" uk-grid>
 
-     <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"  style="background-image: url('{{womens.imgSrc}}');">
-        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">{{womens.department}}</h1>
-            <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{mens.id}}"
+            style="background-image: url('http://cdn.shopify.com/s/files/1/2030/8605/products/3_a86c766a-dea1-4694-9c89-2b534d78c0a5_grande.jpg?v=1513097823');">
+            <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+
+                <h1><a href="/mens/jackets" id="mensJackets" uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">MENS JACKETS</a></h1>
+                <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+            </div>
         </div>
+
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" data-attribute="{{womens.id}}"
+            style="background-image: url('https://content.backcountry.com/promo_upload/bcs/2017/spyder/Backcountry_Social_Widget3.jpg');">
+            <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+                 <h1><a href="/womens/jackets" id="womensJackets" uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">WOMEN'S JACKETS</a></h1>
+                <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">Check out our latest styles.</p>
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -230,6 +239,7 @@
             <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
         </div>
     </div>
+
 </div>
 
 <p style="text-align:center;">Don't forget to check out the weather</p>
@@ -380,3 +390,5 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" src="../js/weather.js"></script>
+
+

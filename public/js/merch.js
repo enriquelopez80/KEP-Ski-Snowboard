@@ -1,43 +1,6 @@
 $(document).ready(function () {
 
-    //CLICK-LISTENERS//
-    //***************//
-
-    $(document).on("click", ".uk-button", function () {
-        let item = $(this).data("name");
-        if (item) {
-            $.ajax({
-                url: `/all/${item}`,
-                method: "GET",
-                success: (data) => {
-                    let modalObj = buildModalObj(data.merch);
-                    renderModal(modalObj)
-                }
-            })
-        }
-        return
-    });
-
-    //SHOPPING CART CLICK LISTENERS//
-    //*****************************//
-    /*
-        1) Add To Cart -- SUBMIT to local storage(?) the following:
-            - the modal item name, description, (all the other obvious ones)  //--*OR see below--//
-            - the SELECTED size (meaning send .text() of the size button with class of 'selected')
-            - the SELECTED color (meaning send .text() of the color button with class of 'selected')
-    
-        2) Color & Size -- CLICK LISTENERS to toggle 'selected'
-            - the 'selected' class... To prevent multiple selections "Add To Cart" would also 
-              have to trigger some kind of validation (loop thru color buttons) whereby only "1"
-              button with class of selected would allow submission to cart
-    
-              *OR: 
-    
-    */
-    //*****************************//
-    //*****************************//
-
-    let buildModalObj = (data) => {
+    const buildModalObj = (data) => {
         let modalObj = {};
         //CREATE UNIQUE SUBSET OF DATA FOR COLORS AND SIZES//
         let colors = data.map(function (item) { return item.color });
@@ -57,39 +20,66 @@ $(document).ready(function () {
         modalObj.subclass = data[0].subclass
         return modalObj
     }
-});
 
-//******UTILS******//
-//*****************//
-
-let renderModal = (data) => {
-    $(".uk-modal-title").text(data.name);
-    $(".uk-modal-img").attr("src", `${data.imgSrc}`);
-    $(".uk-modal-description").text(data.description);
-    $(".colors-available").html(createButtonsHTML(data.color, "color"))
-    $(".sizes-available").html(createButtonsHTML(data.size, "size"))
-}
-
-let createButtonsHTML = (set, buttonType) => {
-    let buttons = "";
-    for (let item of set) {
-        if (buttonType === "color") {
-            buttons += `<button class="uk-button uk-button-${buttonType} uk-button-default uk-button-small" style="border: 1px solid ${item}">${item}</button>`
-        } else if (buttonType === "size") {
-            buttons += `<button class="uk-button uk-button-${buttonType} uk-button-default uk-button-small">${item}</button>`
+    const createButtonsHTML = (set, buttonType) => {
+        let buttons = "";
+        for (let item of set) {
+            if (buttonType === "color") {
+                buttons += `<button class="uk-button uk-button-${buttonType} uk-button-default uk-button-small">${item}</button>`
+            } else if (buttonType === "size") {
+                buttons += `<button class="uk-button uk-button-${buttonType} uk-button-default uk-button-small">${item}</button>`
+            }
         }
+        return buttons;
     }
-    return buttons;
-}
 
-let onlyUnique = (value, index, self) => {
-    return self.indexOf(value) === index;
-}
+    const renderModal = (data) => {
+        $(".uk-modal-title").text(data.name);
+        $(".uk-modal-img").attr("src", `${data.imgSrc}`);
+        $(".uk-modal-price").text(`$${data.itemPrice}`);
+        $(".colors-available").html(createButtonsHTML(data.color, "color"))
+        $(".sizes-available").html(createButtonsHTML(data.size, "size"))
+    }
 
+    const onlyUnique = (value, index, self) => {
+        return self.indexOf(value) === index;
+    }
 
+    //MERCH ON-CLICK LISTENER://
+    $(document).on("click", ".uk-button", function () {
+        let item = $(this).data("name");
+        if (item) {
+            $.ajax({
+                url: `/all/${item}`,
+                method: "GET",
+                success: (data) => {
+                    let modalObj = buildModalObj(data.merch);
+                    renderModal(modalObj)
+                }
+            })
+        }
+        return
+    });
 
+    //TOGGLE SELECTED SIZE:
+    $(document).on("click", ".uk-button-color", function () {
+        let $color = $(this).html();
+        $(".uk-button-color").attr("data-class", "unselected");
+        $(this).attr("data-class", "selected-color");
+        console.log($color);
+        return
+    })
 
+    //TOGGLE SELECTED COLOR:
+    $(document).on("click", ".uk-button-size", function () {
+        let $size = $(this).html();
+        $(".uk-button-size").attr("data-class", "unselected");
+        $(this).attr("data-class", "selected-size");
+        console.log($size);
+        return
+    })
 
+});
 
 
 
