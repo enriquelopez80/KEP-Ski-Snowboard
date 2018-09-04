@@ -4,11 +4,23 @@ const Op = Sequelize.Op;
 
 module.exports = {
 
-    findItemById: (id, cb) => {
+    findOneById: (id, cb) => {
         let responseObj = {};
         db.Merch.findOne({
             where: {
                 id: id
+            }
+        }).then(data => {
+            responseObj.merch = data;
+            cb(responseObj)
+        })
+    },
+
+    findAllByIdArray: (idArray, cb) => {
+        let responseObj = {};
+        db.Merch.findAll({
+            where: {
+                id: idArray
             }
         }).then(data => {
             responseObj.merch = data;
@@ -141,11 +153,8 @@ module.exports = {
             })
     },
 
-
-
     onlyUnique: (value, index, self) => {
         return self.indexOf(value) === index;
     }
-
 
 }
