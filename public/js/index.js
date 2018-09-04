@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 //************CLICK LISTENERS:************//
 //****************************************//
-console.log("CONNECTED");
+console.log("CONNECTED"); 
 
 //HOMEPAGE DIVS//
 //*************//
@@ -55,3 +55,9 @@ $("#right-womens").on("click", function(event) {
     }
   }
 });
+
+
+
+
+
+
