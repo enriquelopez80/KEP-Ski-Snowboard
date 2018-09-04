@@ -20,9 +20,7 @@ module.exports = function (app) {
     let idArray = req.body.data;
     console.log(JSON.stringify(idArray, undefined, 2));
     orm.findAllByIdArray(idArray, function (result) {
-      res.json(result)
-      // res.send('SUCCESS');
-      // res.render("cart", result);
+      res.render("confirm", result);
     });
   });
 
