@@ -60,6 +60,7 @@ $(document).ready(function () {
         `)
     
         $('#day2-box').html(`
+        <div>
         <h2>${weather.list[10].weather[0].description}</h2>
         <h1>${weather.list[10].dt_txt}</h1>
         <a><img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[10].weather[0].icon}.png"></a>
