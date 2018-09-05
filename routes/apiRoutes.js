@@ -19,8 +19,8 @@ module.exports = function (app) {
   app.put("/checkout", function (req, res) {
     let cartArray = req.body.data;
     orm.findCartItems(cartArray, function (result) {
-      // console.log(JSON.stringify(result, undefined, 2))
-      res.render('confirm', result)
+      console.log(JSON.stringify(result, undefined, 2))
+      // res.render('confirm', result)
     });
   });
 
