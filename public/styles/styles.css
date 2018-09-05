@@ -47,4 +47,6 @@ img {
   padding: 10px;
 }
 
-
+[data-class="selected-color"], [data-class="selected-size"] {
+  border: grey 2px solid;
+}
