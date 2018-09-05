@@ -71,4 +71,6 @@ body {
   transition: transform .2s;
 }
 
-
+[data-class="selected-color"], [data-class="selected-size"] {
+  border: grey 2px solid;
+}

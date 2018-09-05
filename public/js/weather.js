@@ -55,36 +55,36 @@ $(document).ready(function () {
         $('#day1-box').html(`
         <h1>${weather.list[3].weather[0].description}</h1>
         <h1>${weather.list[3].dt_txt}</h1>
-        <img src="http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png">
-        <h1>${weather.list[3].main.temp}</h1>
+        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png">
+        <h1>${weather.list[3].main.temp}&#176</h1>
         `)
     
         $('#day2-box').html(`
-        <h2>>${weather.list[10]}</h2>
+        <h2>${weather.list[10].weather[0].description}</h2>
         <h1>${weather.list[10].dt_txt}</h1>
-        <img src="http://openweathermap.org/img/w/${weather.list[10].weather[0].icon}.png">
-        <h1>${weather.list[10].main.temp}</h1>
+        <a><img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[10].weather[0].icon}.png"></a>
+        <h1>${weather.list[10].main.temp}&#176</h1>
         `)
     
         $('#day3-box').html(`
         <h1>${weather.list[18].weather[0].description}</h1>
         <h1>${weather.list[18].dt_txt}</h1>
-        <img src="http://openweathermap.org/img/w/${weather.list[18].weather[0].icon}.png">
-        <h1>${weather.list[18].main.temp}</h1>
+        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[18].weather[0].icon}.png">
+        <h1>${weather.list[18].main.temp}&#176</h1>
         `)
     
         $('#day4-box').html(`
         <h1>${weather.list[26].weather[0].description}</h1>
         <h1>${weather.list[26].dt_txt}</h1>
-        <img src="http://openweathermap.org/img/w/${weather.list[26].weather[0].icon}.png">
-        <h1>${weather.list[26].main.temp}</h1>
+        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[26].weather[0].icon}.png">
+        <h1>${weather.list[26].main.temp}&#176</h1>
         `)
     
         $('#day5-box').html(`
         <h1>${weather.list[34].weather[0].description}</h1>
         <h1>${weather.list[34].dt_txt}</h1>
-        <img src="http://openweathermap.org/img/w/${weather.list[34].weather[0].icon}.png">
-        <h1>${weather.list[34].main.temp}</h1>
+        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[34].weather[0].icon}.png">
+        <h1>${weather.list[34].main.temp}&#176</h1>
         `)
     
     }
