@@ -17,10 +17,10 @@ module.exports = function (app) {
   });
 
   app.put("/checkout", function (req, res) {
-    let idArray = req.body.data;
-    console.log(JSON.stringify(idArray, undefined, 2));
-    orm.findAllByIdArray(idArray, function (result) {
-      res.render("confirm", result);
+    let cartArray = req.body.data;
+    orm.findCartItems(cartArray, function (result) {
+      // console.log(JSON.stringify(result, undefined, 2))
+      res.render('confirm', result)
     });
   });
 
