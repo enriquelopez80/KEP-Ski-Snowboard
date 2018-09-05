@@ -97,10 +97,19 @@ $(document).ready(function () {
 
     const checkout = (event) => {
         event.preventDefault();
+        let cartArray = [];
         let cart = JSON.parse(localStorage.getItem("cart"));
-        let ids = cart.map(item => {return item.id});
-        console.log(ids)
-        ajaxCheckOut(ids)
+        cart.forEach(item => {
+            let invoiceItem = {};
+            invoiceItem.name = item.name;
+            invoiceItem.color = item.color;
+            invoiceItem.size = item.size;
+            cartArray.push(invoiceItem);
+        })
+        // let ids = cart.map(item => {return item.id});
+        // console.log(ids)
+        console.log(cartArray);
+        ajaxCheckOut(cartArray);
     };
 
     const ajaxCheckOut = (data) => {
@@ -108,8 +117,8 @@ $(document).ready(function () {
             type: "PUT",
             url: "/checkout",
             data: {data},
-            success: (data) => {
-                console.log(JSON.stringify(data.merch, undefined, 2));
+            success: () => {
+                console.log('SUCCESS')
             }
         })
     };
