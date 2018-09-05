@@ -121,6 +121,35 @@
                                     <li><a href="/accessories/womens/socks">Socks</a></li>
                                 </ul>
                             </div>
+                    </li>
+                    <li>
+                        <a href="#">Ski</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="#">Equipment</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/ski/skis" id="skis">Skis</a></li>
+                                <li><a href="/ski/bindings" id="skiBindings">Bindings</a></li>
+                                <li><a href="/ski/boots" id="skiBoots">Boots</a></li>
+                                <li class="uk-nav-header">Safety</li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/equipment/helmets" class="helmets">Helmets</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Snowboard</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="#">Equipment</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/snowboard/boards" id="snowboards">Boards</a></li>
+                                <li><a href="/snowboard/bindings" id="snowBindings">Bindings</a></li>
+                                <li><a href="/snowboard/boots" id="snowBoots">Boots</a></li>
+                                <li class="uk-nav-header">Safety</li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/equipment/helmets" class="helmets">Helmets</a></li>
+                            </ul>
                         </div>
                     </div>
                 </li>
@@ -177,25 +206,6 @@
 
                             <div id="cart">
                                 <h3>Your Cart is Empty!</h3>
-
-                                <ul class="uk-nav uk-nav-default">
-                                    <li class="uk-active">Item Name</li>
-                                    <li class="uk-parent">
-                                        <ul class="uk-nav-sub">
-                                            <li>Size</li>
-                                            <li>Color</li>
-                                            <li>Price</li>
-                                        </ul>
-                                    </li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: credit-card"></span>Checkout</a></li>
-                                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Empty
-                                            Cart
-                                        </a></li>
-                                </ul>
-
-                                {{!-- BUILD OUT CART ITEMS SO THAT MERCH.JS CAN LOOP OVER STORAGE DATA AND RENDER THE CART ITEMS HERE ACCORDINGLY --}}
-
                             </div>
 
                         </div>
@@ -245,9 +255,9 @@
 
 </div>
 
-
 <footer style="display: flex; justify-content: center">
     <p style="text-align:center;">First day of Winter!</p>
+
     <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2018-12-21T21:21:23+00:00">
         <div>
             <div class="uk-countdown-number uk-countdown-days"></div>
@@ -269,7 +279,47 @@
             <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
         </div>
     </div>
-</footer>
+</div>
+
+<p style="text-align:center;">Don't forget to check out the weather</p>
+
+<div class="weather-container" style="padding-left:20px;padding-right:20px;">
+
+<button id="mammoth-active" class="uk-button uk-button-primary uk-button-small">Mammoth, CA</button>
+<button id="bigBear" class="uk-button uk-button-primary uk-button-small">Big Bear, CA</button>
+<button id="tahoe" class="uk-button uk-button-primary uk-button-small">Tahoe, CA</button>
+<button id="breckenridge" class="uk-button uk-button-primary uk-button-small">Breckenridge, CO</button>
+<button id="aspen" class="uk-button uk-button-primary uk-button-small">Aspen, CO</button>
+
+        <div class="uk-card uk-card-body" style="min-height:150px;">
+            <h3 class="uk-card-title">5-Day Forecast</h3>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+                <div>
+                    <div id="main-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+                <div>
+                    <div id="day1-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+                <div>
+                    <div id="day2-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+                <div>
+                    <div id="day3-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+                <div>
+                    <div id="day4-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+                <div>
+                    <div id="day5-box" class="uk-card uk-card-default uk-card-body"></div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<span style="display:flex;justify-content:center;" uk-icon="github"><a href="https://github.com/enriquelopez80/project-2">Github Repo </a></span>
+
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/weather.js"></script>
