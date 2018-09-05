@@ -201,19 +201,21 @@
         <div class="uk-width-1-4">
             <div class="cart-confirm-container">
                 <div class="cart-items">
-                    {{#each merch}} {{confirm/confirm}} {{/each}}
+                    {{#each merch}}
+                        {{>confirmCart/confirmCart}}
+                    {{/each}}
                 </div>
                 <a href="#" id="place-order">
                     <span class="uk-margin-small-right uk-icon" uk-icon="icon: credit-card">
                     </span>
+                    <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Your Order has been confirmed'})"></button>
                     Place Order
+                    </button>
                 </a>
                 <a href="#" id="emptyCart">
                     <span class="uk-margin-small-right uk-icon" uk-icon="icon: trash">
                     </span>
-                    <button class="uk-button uk-button-default demo" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Your Order has been confirmed'})">
-                    Place Order
-                    </button>
+                    Empty Cart
                 </a>
             </div>
             </div>
@@ -221,3 +223,6 @@
     </div>
 </div>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/cart.js"></script>
