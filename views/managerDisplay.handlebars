@@ -133,23 +133,24 @@
                 </div>
             </div>
             
-            <div class="manager-container" style="margin-top: 100px;">
-            <form>
+            <div class="manager-container" style="margin-top: 100px;margin-left:25px;margin-right:25px;">
+            <form style="margin-left:50px;">
                 <div class="uk-margin">
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input class="uk-input" type="text">
+                        <input class="uk-input" id="userid" type="text">
                     </div>
                 </div>
             
                 <div class="uk-margin">
                     <div class="uk-inline">
                         <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                        <input class="uk-input" type="text">
+                        <input class="uk-input" id="pw" type="text">
                     </div>
                 </div>
             </form>
             
+            <div class="show-hide">
             <ul uk-accordion="multiple: true">
                 <li class="uk-close">
                     <a class="uk-accordion-title" href="#">Add New Item to Inventory</a>
@@ -255,7 +256,11 @@
                     </div>
                 </li>
             </ul>
+            </div>
         </div>
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/cart.js"></script>
+<script type="text/javascript" src="../js/manager.js"></script>
 
