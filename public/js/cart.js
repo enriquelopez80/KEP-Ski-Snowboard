@@ -139,13 +139,12 @@ $(document).ready(function () {
         event.preventDefault()
         let orderInfo = {}
         let cart = JSON.parse(localStorage.getItem("invoice"))
-        let idArr = cart.map(item => {
-            return item.id
-        })
         orderInfo.customer = $("#customer-name").val().trim();
         orderInfo.shipTo = $("#customer-address").val().trim();
         orderInfo.instructions = $("#shipping-instructions").val().trim();
-        orderInfo.products = idArr
+        orderInfo.productIds = cart.map(item => {
+            return item.id
+        })
         console.log(orderInfo)
     }
 
