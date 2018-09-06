@@ -70,39 +70,48 @@ $(document).ready(function () {
         `)
     
         $('#day1-box').html(`
-        <h1>${weather.list[3].weather[0].description}</h1>
-        <h1>${monthDay1[1]}/${monthDayFixed1[0]}</h1>
-        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png">
-        <h1>${weather.list[3].main.temp}&#176</h1>
+        <div class="dayOne">
+        <h2 class=capitalize>${weather.list[3].weather[0].description}</h2>
+        <h3>${monthDay1[1]}/${monthDayFixed1[0]}</h3>
+        <img style="width:150px; height:150px ; border:0;" src="http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png">
+        <h2>${weather.list[3].main.temp}&#176</h2>
+        </div>
         `)
     
         $('#day2-box').html(`
-        <div>
-        <h2>${weather.list[11].weather[0].description}</h2>
-        <h1>${monthDay2[1]}/${monthDayFixed2[0]}</h1>
-        <a><img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[11].weather[0].icon}.png"></a>
-        <h1>${weather.list[11].main.temp}&#176</h1>
+        <div class="dayTwo">
+        <h2 class=capitalize>${weather.list[11].weather[0].description}</h2>
+        <h3>${monthDay2[1]}/${monthDayFixed2[0]}</h3>
+        <a><img style="width:150px;height:150px;border:0;" src="http://openweathermap.org/img/w/${weather.list[11].weather[0].icon}.png"></a>
+        <h2>${weather.list[11].main.temp}&#176</h2>
+        </div>
         `)
     
         $('#day3-box').html(`
-        <h1>${weather.list[19].weather[0].description}</h1>
-        <h1>${monthDay3[1]}/${monthDayFixed3[0]}</h1>
-        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[19].weather[0].icon}.png">
-        <h1>${weather.list[19].main.temp}&#176</h1>
+        <div class="dayThree">
+        <h2 class=capitalize>${weather.list[19].weather[0].description}</h2>
+        <h3>${monthDay3[1]}/${monthDayFixed3[0]}</h3>
+        <img style="width:150px;height:150px;border:0;" src="http://openweathermap.org/img/w/${weather.list[19].weather[0].icon}.png">
+        <h2>${weather.list[19].main.temp}&#176</h2>
+        </div>
         `)
     
         $('#day4-box').html(`
-        <h1>${weather.list[27].weather[0].description}</h1>
-        <h1>${monthDay4[1]}/${monthDayFixed4[0]}</h1>
-        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[27].weather[0].icon}.png">
-        <h1>${weather.list[27].main.temp}&#176</h1>
+        <div class="dayFour">
+        <h2 class=capitalize>${weather.list[27].weather[0].description}</h2>
+        <h3>${monthDay4[1]}/${monthDayFixed4[0]}</h3>
+        <img style="width:150px;height:150px;border:0;" src="http://openweathermap.org/img/w/${weather.list[27].weather[0].icon}.png">
+        <h2>${weather.list[27].main.temp}&#176</h2> 
+        </div>
         `)
     
         $('#day5-box').html(`
-        <h1>${weather.list[35].weather[0].description}</h1>
-        <h1>${monthDay5[1]}/${monthDayFixed5[0]}</h1>
-        <img style="width:20%;height:20%;border:0;" src="http://openweathermap.org/img/w/${weather.list[35].weather[0].icon}.png">
-        <h1>${weather.list[35].main.temp}&#176</h1>
+        <div class="dayFive">
+        <h2 class=capitalize>${weather.list[35].weather[0].description}</h2>
+        <h3>${monthDay5[1]}/${monthDayFixed5[0]}</h3>
+        <img style="width:150px;height:150px;border:0;" src="http://openweathermap.org/img/w/${weather.list[35].weather[0].icon}.png">
+        <h2>${weather.list[35].main.temp}&#176</h2>
+        </div>
         `)
     
     }
