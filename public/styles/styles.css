@@ -150,5 +150,9 @@ body {
 }
 
 .merch-item-card {
-  min-height: 450px;
+  min-height: 550px;
+}
+
+.modal-container {
+  width: 850px !important;
 }

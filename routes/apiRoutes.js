@@ -9,30 +9,6 @@ module.exports = function (app) {
     })
   });
 
-  app.get("/id/:id", function (req, res) {
-    let id = Number(req.params.id);
-    orm.findOneById(id, function (result) {
-      res.json(result)
-    })
-  });
-
-  app.put("/checkout", function (req, res) {
-    let cartArray = req.body.data;
-    orm.findCartItems(cartArray, function (result) {
-      res.json(result)
-    });
-  });
-
-  app.get("/manager", function (req, res) {
-    res.render("managerDisplay");
-  });
-
-  app.get("/one/:name", function (req, res) {
-    orm.findOneByProdName(req.params.name.toUpperCase(), function (result) {
-      res.json(result)
-    });
-  })
-
   app.get("/all/:name", function (req, res) {
     orm.findAllByProdName(req.params.name.toUpperCase(), function (result) {
       res.json(result);
@@ -56,8 +32,34 @@ module.exports = function (app) {
     })
   })
 
+  app.put("/checkout", function (req, res) {
+    let cartArray = req.body.data;
+    orm.findCartItems(cartArray, function (result) {
+      res.json(result)
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
   });
+
+  //MANAGER ROUTES (UNDER CONSTRUCTION)//
+  app.get("/manager", function (req, res) {
+    res.render("managerDisplay");
+  });
+
+  app.get("/one/:name", function (req, res) {
+    orm.findOneByProdName(req.params.name.toUpperCase(), function (result) {
+      res.json(result)
+    });
+  })
+
+  app.get("/id/:id", function (req, res) {
+    let id = Number(req.params.id);
+    orm.findOneById(id, function (result) {
+      res.json(result)
+    })
+  });
+
 };
