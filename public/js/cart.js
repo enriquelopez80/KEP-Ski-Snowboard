@@ -57,7 +57,7 @@ $(document).ready(function () {
                 `);
             })
             $("#cart").append(`
-            <div class="checkout-button">
+            <div class="checkout-button" >
             <a href="#" id="checkout"><span class="uk-margin-small-right" uk-icon="icon: credit-card"></span>Checkout</a>
             </div>
             <div class="empty-cart-button">
