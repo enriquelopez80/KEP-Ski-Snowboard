@@ -4,7 +4,7 @@ $(document).ready(function () {
     
     //ajax call to go get data by location
         let getWeather = (location) => {
-            let queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=afe58f9450b317d57344ebad3f68d672&units=imperial`;
+            let queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=afe58f9450b317d57344ebad3f68d672&units=imperial`;
             $.ajax({
               method: "GET",
               url: queryURL,
