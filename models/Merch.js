@@ -34,12 +34,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     createdAt: {
-      type: DataTypes.STRING,
-      allowNull: true
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
     },
     updatedAt: {
-      type: DataTypes.STRING,
-      allowNull: true
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
     }
   });
   return Merch;
