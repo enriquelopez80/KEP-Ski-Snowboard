@@ -148,3 +148,7 @@ body {
 .uk-height-large {
  height: 550px !important;
 }
+
+.merch-item-card {
+  min-height: 450px;
+}
