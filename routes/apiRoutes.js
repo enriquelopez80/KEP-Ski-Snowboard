@@ -23,6 +23,10 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/manager", function (req, res) {
+    res.render("managerDisplay");
+  });
+
   app.get("/one/:name", function (req, res) {
     orm.findOneByProdName(req.params.name.toUpperCase(), function (result) {
       res.json(result)
