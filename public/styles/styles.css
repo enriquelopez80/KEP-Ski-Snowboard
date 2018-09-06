@@ -130,6 +130,17 @@ body {
   align-items: center;
 }
 
+.colors-available {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sizes-available {
+  display: flex;
+  flex-direction: column;
+}
+
 [data-class="selected-color"], [data-class="selected-size"] {
   border: grey 2px solid;
 }
