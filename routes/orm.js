@@ -1,7 +1,6 @@
 const db = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
-const Promise = require("bluebird");
 
 module.exports = {
 
@@ -30,18 +29,17 @@ module.exports = {
     },
 
     findCartItems: (queryArray, cb) => {
-        let responseArray = [];
-        Promise.each(queryArray, function (item) {
+        let dataArr = queryArray.map(function (item) {
             return db.Merch.findOne({
                 where: {
-                    [Op.and]: [{name: item.name}, {color: item.color}, {size: item.size}]
+                    [Op.and]: [{ name: item.name }, { color: item.color }, { size: item.size }]
                 }
-            }).then(data => {
-                responseArray.push(data)
-            }).then(function() {
-                cb(responseArray)
             })
         })
+        Promise
+            .all(dataArr).then(function () {
+                cb(dataArr)
+            })
     },
 
     findOneByProdName: (productName, cb) => {

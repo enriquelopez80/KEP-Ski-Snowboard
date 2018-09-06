@@ -11,16 +11,15 @@ module.exports = function (app) {
 
   app.get("/id/:id", function (req, res) {
     let id = Number(req.params.id);
-    orm.findItemById(id, function (result) {
-      res.render("merchDisplay", result);
+    orm.findOneById(id, function (result) {
+      res.json(result)
     })
   });
 
   app.put("/checkout", function (req, res) {
     let cartArray = req.body.data;
     orm.findCartItems(cartArray, function (result) {
-      console.log(JSON.stringify(result, undefined, 2))
-      // res.render('confirm', result)
+      res.json(result)
     });
   });
 
