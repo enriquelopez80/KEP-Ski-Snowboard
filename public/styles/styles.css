@@ -45,7 +45,7 @@ body {
 }
 
 .latest-styles-womens {
-  padding: 10px 50px 40px 80px;
+  padding: 10px 50px 10px 80px;
 }
 
 .mensJackets {
@@ -69,6 +69,65 @@ body {
 .womensJackets {
   color: #1b75bc;
   transition: transform .2s;
+}
+
+.countdown {
+  padding-bottom: 40px
+}
+
+.dayOne,
+.dayTwo,
+.dayThree,
+.dayFour,
+.dayFive {
+  padding: 10px 20px 30px 20px;
+  text-align: center;
+}
+
+.dayOne {
+  border-top: 05px solid #1b75bc;
+  border-right: 2.5px solid #1b75bc;
+  border-bottom: 05px solid #1b75bc;
+  border-left: 05px solid #1b75bc;
+}
+
+.dayTwo {
+  border-top: 05px solid #1b75bc;
+  border-right: 2.5px solid #1b75bc;
+  border-bottom: 05px solid #1b75bc;
+  border-left: 2.5px solid #1b75bc;
+}
+
+.dayThree {
+  border-top: 05px solid #1b75bc;
+  border-right: 2.5px solid #1b75bc;
+  border-bottom: 05px solid #1b75bc;
+  border-left: 2.5px solid #1b75bc;
+}
+
+.dayFour {
+  border-top: 05px solid #1b75bc;
+  border-right: 2.5px solid #1b75bc;
+  border-bottom: 05px solid #1b75bc;
+  border-left: 2.5px solid #1b75bc;
+}
+
+.dayFive {
+  border-top: 05px solid #1b75bc;
+  border-right: 5px solid #1b75bc;
+  border-bottom: 05px solid #1b75bc;
+  border-left: 2.5px solid #1b75bc;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 [data-class="selected-color"], [data-class="selected-size"] {
