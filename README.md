@@ -1,6 +1,6 @@
 # KEP Ski & Snowboard Shop
 
-Hosted on Heroku: [KEP Ski & Snowboard] (https://floating-woodland-41490.herokuapp.com/)
+Hosted on Heroku: [KEP Ski & Snowboard](https://floating-woodland-41490.herokuapp.com/)
 
 ### About
 
